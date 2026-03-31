@@ -1,4 +1,31 @@
 {
   "heroTitle": "Official JMEXE AI",
-  "heroText": "This hero text is updating live from Firebase."
+  "heroText": "This homepage content is now updating live from Firebase.",
+  "aboutTitle": "Built to present ideas clearly.",
+  "aboutCardOneTitle": "Clean by default",
+  "aboutCardOneText": "This layout keeps the message focused with strong spacing, readable typography, and a modern visual style.",
+  "aboutCardTwoTitle": "Easy to customize",
+  "aboutCardTwoText": "Update headings, colors, links, and sections directly from Firestore without redeploying every text change.",
+  "servicesTitle": "What this landing page can showcase.",
+  "serviceOneTitle": "AI solutions",
+  "serviceOneText": "Highlight assistants, smart tools, and automation workflows.",
+  "serviceTwoTitle": "Web presence",
+  "serviceTwoText": "Share your brand story and links in one polished place.",
+  "serviceThreeTitle": "Product launch",
+  "serviceThreeText": "Use this page as a simple launch site for an idea, portfolio, or announcement.",
+  "highlightsTitle": "Why this starter works well on GitHub Pages.",
+  "highlightsLeft": [
+    "No build step required",
+    "Mobile-friendly layout",
+    "Theme toggle included"
+  ],
+  "highlightsRight": [
+    "Lightweight static files",
+    "Smooth section navigation",
+    "Simple content structure"
+  ],
+  "contactTitle": "Ready to publish or personalize it further?",
+  "contactText": "Point visitors to your own email, booking page, or profile link.",
+  "contactButtonLabel": "Visit GitHub",
+  "contactButtonUrl": "https://github.com/officialjmexe-ai"
 }

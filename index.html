@@ -40,8 +40,8 @@
       <section class="hero container reveal">
         <div class="hero-copy">
           <p class="eyebrow">AI-powered ideas, designed to ship</p>
-          <h1 id="heroTitle">Modern web experiences for the next build.</h1>
-          <p class="hero-text" id="heroText">
+          <h1 id="heroTitle" data-firestore-text="heroTitle">Modern web experiences for the next build.</h1>
+          <p class="hero-text" id="heroText" data-firestore-text="heroText">
             Official JMEXE AI creates clean, fast, and polished digital experiences for
             startups, creators, and ambitious projects.
           </p>
@@ -76,7 +76,7 @@
             </p>
             <p class="status-help">
               Add your keys in <code>firebase-config.js</code> and create
-              <code>siteContent/homepage</code> in Firestore for live hero updates.
+              <code>siteContent/homepage</code> in Firestore for live section updates.
             </p>
           </div>
           <div class="panel accent">
@@ -92,19 +92,19 @@
       <section class="section container reveal" id="about">
         <div class="section-heading">
           <p class="eyebrow">About</p>
-          <h2>Built to present ideas clearly.</h2>
+          <h2 data-firestore-text="aboutTitle">Built to present ideas clearly.</h2>
         </div>
         <div class="grid two-col">
           <article class="card">
-            <h3>Clean by default</h3>
-            <p>
+            <h3 data-firestore-text="aboutCardOneTitle">Clean by default</h3>
+            <p data-firestore-text="aboutCardOneText">
               This layout keeps the message focused with strong spacing, readable typography,
               and a modern visual style.
             </p>
           </article>
           <article class="card">
-            <h3>Easy to customize</h3>
-            <p>
+            <h3 data-firestore-text="aboutCardTwoTitle">Easy to customize</h3>
+            <p data-firestore-text="aboutCardTwoText">
               Update headings, colors, links, and sections directly in a few files without a
               framework or build setup.
             </p>
@@ -115,21 +115,21 @@
       <section class="section container reveal" id="services">
         <div class="section-heading">
           <p class="eyebrow">Services</p>
-          <h2>What this landing page can showcase.</h2>
+          <h2 data-firestore-text="servicesTitle">What this landing page can showcase.</h2>
         </div>
 
         <div class="grid three-col">
           <article class="card feature-card">
-            <h3>AI solutions</h3>
-            <p>Highlight smart tools, assistants, workflows, and automation projects.</p>
+            <h3 data-firestore-text="serviceOneTitle">AI solutions</h3>
+            <p data-firestore-text="serviceOneText">Highlight smart tools, assistants, workflows, and automation projects.</p>
           </article>
           <article class="card feature-card">
-            <h3>Web presence</h3>
-            <p>Share your brand story, value proposition, and links in one polished place.</p>
+            <h3 data-firestore-text="serviceTwoTitle">Web presence</h3>
+            <p data-firestore-text="serviceTwoText">Share your brand story, value proposition, and links in one polished place.</p>
           </article>
           <article class="card feature-card">
-            <h3>Product launch</h3>
-            <p>Use this page as a simple launch site for an idea, portfolio, or announcement.</p>
+            <h3 data-firestore-text="serviceThreeTitle">Product launch</h3>
+            <p data-firestore-text="serviceThreeText">Use this page as a simple launch site for an idea, portfolio, or announcement.</p>
           </article>
         </div>
       </section>
@@ -137,19 +137,19 @@
       <section class="section container reveal" id="highlights">
         <div class="section-heading">
           <p class="eyebrow">Highlights</p>
-          <h2>Why this starter works well on GitHub Pages.</h2>
+          <h2 data-firestore-text="highlightsTitle">Why this starter works well on GitHub Pages.</h2>
         </div>
 
         <div class="grid two-col">
           <article class="card list-card">
-            <ul>
+            <ul data-firestore-list="highlightsLeft">
               <li>No build step required</li>
               <li>Mobile-friendly layout</li>
               <li>Theme toggle included</li>
             </ul>
           </article>
           <article class="card list-card">
-            <ul>
+            <ul data-firestore-list="highlightsRight">
               <li>Lightweight static files</li>
               <li>Smooth section navigation</li>
               <li>Simple content structure</li>
@@ -162,13 +162,13 @@
         <div class="contact-card">
           <div>
             <p class="eyebrow">Contact</p>
-            <h2>Ready to publish or personalize it further?</h2>
-            <p>
+            <h2 data-firestore-text="contactTitle">Ready to publish or personalize it further?</h2>
+            <p data-firestore-text="contactText">
               Update this section with your own links, email, or booking form. For now, your
               GitHub profile is a great place to direct visitors.
             </p>
           </div>
-          <a class="button button-primary" href="https://github.com/officialjmexe-ai" target="_blank" rel="noreferrer">
+          <a class="button button-primary" href="https://github.com/officialjmexe-ai" target="_blank" rel="noreferrer" data-firestore-text="contactButtonLabel" data-firestore-href="contactButtonUrl">
             Visit GitHub
           </a>
         </div>

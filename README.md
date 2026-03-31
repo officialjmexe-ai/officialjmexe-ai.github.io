@@ -18,11 +18,17 @@ Use fields like these:
 ```json
 {
   "heroTitle": "Official JMEXE AI",
-  "heroText": "This hero text is updating live from Firebase."
+  "heroText": "This homepage content is now updating live from Firebase.",
+  "aboutTitle": "Built to present ideas clearly.",
+  "servicesTitle": "What this landing page can showcase.",
+  "highlightsLeft": ["No build step required", "Mobile-friendly layout"],
+  "highlightsRight": ["Lightweight static files", "Simple content structure"],
+  "contactButtonLabel": "Visit GitHub",
+  "contactButtonUrl": "https://github.com/officialjmexe-ai"
 }
 ```
 
-The homepage listens to that document and updates the hero section automatically.
+The homepage listens to that document and updates the hero, about, services, highlights, and contact sections automatically.
 
 ### 3) Firestore rules
 A starter rules file is included in [`firestore.rules`](./firestore.rules).

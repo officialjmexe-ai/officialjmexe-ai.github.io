@@ -5,8 +5,9 @@ const themeIcon = document.getElementById('themeIcon');
 const year = document.getElementById('year');
 const storedTheme = localStorage.getItem('theme');
 const firebaseStatus = document.getElementById('firebaseStatus');
-const heroTitle = document.getElementById('heroTitle');
-const heroText = document.getElementById('heroText');
+const textTargets = document.querySelectorAll('[data-firestore-text]');
+const hrefTargets = document.querySelectorAll('[data-firestore-href]');
+const listTargets = document.querySelectorAll('[data-firestore-list]');
 
 const setFirebaseStatus = (message, state = 'idle') => {
   if (!firebaseStatus) {
@@ -63,14 +64,52 @@ if ('IntersectionObserver' in window) {
   document.querySelectorAll('.reveal').forEach((section) => section.classList.add('visible'));
 }
 
-const applyHomepageContent = (data) => {
-  if (typeof data?.heroTitle === 'string' && heroTitle) {
-    heroTitle.textContent = data.heroTitle;
+const isSafeUrl = (value) => {
+  if (typeof value !== 'string') {
+    return false;
   }
 
-  if (typeof data?.heroText === 'string' && heroText) {
-    heroText.textContent = data.heroText;
+  return /^(https?:|mailto:|tel:|#|\/)/i.test(value.trim());
+};
+
+const renderList = (element, items) => {
+  if (!element || !Array.isArray(items)) {
+    return;
   }
+
+  const normalizedItems = items.filter((item) => typeof item === 'string' && item.trim() !== '');
+
+  if (!normalizedItems.length) {
+    return;
+  }
+
+  element.innerHTML = '';
+  normalizedItems.forEach((item) => {
+    const li = document.createElement('li');
+    li.textContent = item;
+    element.appendChild(li);
+  });
+};
+
+const applyHomepageContent = (data = {}) => {
+  textTargets.forEach((element) => {
+    const key = element.dataset.firestoreText;
+    if (typeof data[key] === 'string' && data[key].trim() !== '') {
+      element.textContent = data[key];
+    }
+  });
+
+  hrefTargets.forEach((element) => {
+    const key = element.dataset.firestoreHref;
+    if (isSafeUrl(data[key])) {
+      element.setAttribute('href', data[key]);
+    }
+  });
+
+  listTargets.forEach((element) => {
+    const key = element.dataset.firestoreList;
+    renderList(element, data[key]);
+  });
 };
 
 const startFirebase = async () => {
