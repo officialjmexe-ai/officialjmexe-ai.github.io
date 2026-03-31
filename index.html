@@ -40,8 +40,8 @@
       <section class="hero container reveal">
         <div class="hero-copy">
           <p class="eyebrow">AI-powered ideas, designed to ship</p>
-          <h1>Modern web experiences for the next build.</h1>
-          <p class="hero-text">
+          <h1 id="heroTitle">Modern web experiences for the next build.</h1>
+          <p class="hero-text" id="heroText">
             Official JMEXE AI creates clean, fast, and polished digital experiences for
             startups, creators, and ambitious projects.
           </p>
@@ -66,6 +66,18 @@
               <li>Responsive CSS design</li>
               <li>Light JavaScript interactions</li>
             </ul>
+          </div>
+          <div class="panel">
+            <p class="panel-label">Firebase status</p>
+            <p class="status-row">
+              <span class="status-pill" id="firebaseStatus" data-state="idle">
+                Firebase not configured yet
+              </span>
+            </p>
+            <p class="status-help">
+              Add your project keys in <code>firebase-config.js</code> to enable live content
+              from Firestore.
+            </p>
           </div>
           <div class="panel accent">
             <p class="panel-label">What this site gives you</p>
