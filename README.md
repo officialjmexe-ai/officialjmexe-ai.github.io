@@ -18,12 +18,12 @@ Use fields like these:
 ```json
 {
   "heroTitle": "Official JMEXE AI",
-  "heroText": "This homepage content is now updating live from Firebase.",
-  "aboutTitle": "Built to present ideas clearly.",
-  "servicesTitle": "What this landing page can showcase.",
-  "highlightsLeft": ["No build step required", "Mobile-friendly layout"],
-  "highlightsRight": ["Lightweight static files", "Simple content structure"],
-  "contactButtonLabel": "Visit GitHub",
+  "heroText": "AI-powered websites, automation, and digital tools built to launch fast and look polished.",
+  "aboutTitle": "Practical AI experiences with a clean public presence.",
+  "servicesTitle": "What Official JMEXE AI can present.",
+  "highlightsLeft": ["Live text updates from Firestore", "Fast static hosting on GitHub Pages"],
+  "highlightsRight": ["Simple HTML, CSS, and JavaScript stack", "Easy to expand as your brand grows"],
+  "contactButtonLabel": "View GitHub",
   "contactButtonUrl": "https://github.com/officialjmexe-ai"
 }
 ```

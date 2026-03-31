@@ -1,4 +1,5 @@
-import { firebaseConfig, homepageDocPath } from './firebase-config.js';
+import { doc, onSnapshot } from 'https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js';
+import { db, firebaseConfig, homepageDocPath } from './firebase-config.js';
 
 const themeToggle = document.getElementById('themeToggle');
 const themeIcon = document.getElementById('themeIcon');
@@ -112,12 +113,12 @@ const applyHomepageContent = (data = {}) => {
   });
 };
 
-const startFirebase = async () => {
+const startFirebase = () => {
   if (!firebaseStatus) {
     return;
   }
 
-  if (!hasFirebaseConfig(firebaseConfig)) {
+  if (!hasFirebaseConfig(firebaseConfig) || !db) {
     setFirebaseStatus('Firebase not configured yet', 'idle');
     return;
   }
@@ -125,13 +126,6 @@ const startFirebase = async () => {
   setFirebaseStatus('Connecting to Firebase…', 'loading');
 
   try {
-    const [{ initializeApp }, { getFirestore, doc, onSnapshot }] = await Promise.all([
-      import('https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js'),
-      import('https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js'),
-    ]);
-
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
     const homepageRef = doc(db, homepageDocPath.collection, homepageDocPath.document);
 
     onSnapshot(

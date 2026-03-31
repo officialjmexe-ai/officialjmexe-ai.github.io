@@ -89,6 +89,16 @@
         </aside>
       </section>
 
+      <section class="section container reveal" id="live-updates">
+        <div id="breaking-ticker" class="ticker-wrap">
+          <div id="ticker-content" class="ticker-move">
+            Loading latest frontline reports...
+          </div>
+        </div>
+
+        <div id="war-updates-container"></div>
+      </section>
+
       <section class="section container reveal" id="about">
         <div class="section-heading">
           <p class="eyebrow">About</p>
@@ -182,6 +192,54 @@
       </div>
     </footer>
 
+    <script type="module">
+      import { db } from './firebase-config.js';
+      import {
+        collection,
+        onSnapshot,
+        orderBy,
+        query,
+      } from 'https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js';
+
+      const container = document.getElementById('war-updates-container');
+      const ticker = document.getElementById('ticker-content');
+
+      if (!container || !ticker || !db) {
+        if (ticker) {
+          ticker.textContent = 'Live updates will appear once Firebase is connected.';
+        }
+      } else {
+        onSnapshot(
+          query(collection(db, 'conflict_news'), orderBy('timestamp', 'desc')),
+          (snapshot) => {
+            snapshot.docChanges().forEach((change) => {
+              if (change.type === 'added') {
+                const news = change.doc.data();
+
+                if ((news.importance ?? 0) >= 5) {
+                  ticker.innerHTML = `BREAKING: ${news.headline} — ${ticker.innerHTML}`;
+                }
+
+                const card = document.createElement('div');
+                card.className = `update-card p-${news.importance ?? 1} new-pulse`;
+
+                const time = document.createElement('small');
+                time.textContent = news.timestamp?.toDate?.().toLocaleTimeString() || 'Just now';
+
+                const headline = document.createElement('h3');
+                headline.textContent = news.headline || 'Untitled update';
+
+                const summary = document.createElement('p');
+                summary.textContent = news.summary || '';
+
+                card.append(time, headline, summary);
+                container.prepend(card);
+              }
+            });
+          }
+        );
+      }
+    </script>
     <script type="module" src="script.js"></script>
   </body>
 </html>

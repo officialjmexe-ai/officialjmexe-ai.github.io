@@ -1,3 +1,10 @@
+import {
+  initializeApp,
+  getApp,
+  getApps,
+} from 'https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js';
+import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js';
+
 // Paste your Firebase web app config values below.
 // You can copy them from: Firebase Console -> Project settings -> Your apps -> Web app
 // These values are safe for client-side use in a static website.
@@ -11,6 +18,17 @@ export const firebaseConfig = {
   appId: '1:886754711197:web:4cbbe2c311dfac1a332674',
   measurementId: 'G-4TBYM6LTQ5',
 };
+
+const hasFirebaseConfig = (config) => {
+  const requiredKeys = ['apiKey', 'authDomain', 'projectId', 'appId'];
+  return requiredKeys.every((key) => typeof config?.[key] === 'string' && config[key].trim() !== '');
+};
+
+export const app = hasFirebaseConfig(firebaseConfig)
+  ? (getApps().length ? getApp() : initializeApp(firebaseConfig))
+  : null;
+
+export const db = app ? getFirestore(app) : null;
 
 // Firestore document watched by the homepage for live updates.
 // Example fields:
