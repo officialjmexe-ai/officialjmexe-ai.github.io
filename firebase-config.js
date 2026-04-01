@@ -40,3 +40,6 @@ export const homepageDocPath = {
   collection: 'siteContent',
   document: 'homepage',
 };
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
