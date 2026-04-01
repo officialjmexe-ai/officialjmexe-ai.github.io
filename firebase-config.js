@@ -1,8 +1,7 @@
-// Firebase configuration
+// Updated firebase-config.js
 const firebaseConfig = {
-    // Your configuration values
+    // Other configurations...
+    homepageDocPath: '/new/homepage/document/path', // Fixed path
 };
 
-const homepageDocPath = firebaseConfig.databaseURL + '/homepage';
-
-export { firebaseConfig, homepageDocPath };
+export default firebaseConfig;
