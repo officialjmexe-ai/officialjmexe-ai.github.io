@@ -1,47 +1,29 @@
-# Global-updates.github.io
+# USA-Iran Live Updates
 
-A simple GitHub Pages landing site with optional live Firebase / Firestore content.
+This repository provides live updates regarding the ongoing situation between the USA and Iran.
 
-## Firebase setup
+## Overview
 
-### 1) Web app config
-Paste your Firebase web config into [`firebase-config.js`](./firebase-config.js).
+The information provided here is compiled from various sources to give real-time updates.
 
-### 2) Firestore document
-Create this document in Firestore:
+- Updates are sourced from:
+  - News Outlets
+  - Official Reports
 
-- **Collection:** `siteContent`
-- **Document:** `homepage`
+For the latest updates, visit our GitHub Pages at [Global-updates](https://Global-updates.github.io/USA-Iran-live-updates/).
 
-Use fields like these:
+### Updates
 
-```json
-{
-  "heroTitle": "Official JMEXE AI",
-  "heroText": "AI-powered websites, automation, and digital tools built to launch fast and look polished.",
-  "aboutTitle": "Practical AI experiences with a clean public presence.",
-  "servicesTitle": "What Official JMEXE AI can present.",
-  "highlightsLeft": ["Live text updates from Firestore", "Fast static hosting on GitHub Pages"],
-  "highlightsRight": ["Simple HTML, CSS, and JavaScript stack", "Easy to expand as your brand grows"],
-  "contactButtonLabel": "View GitHub",
-  "contactButtonUrl": "https://github.com/officialjmexe-ai"
-}
-```
+1. Major Event 1
+2. Major Event 2
+3. Major Event 3
 
-The homepage listens to that document and updates the hero, about, services, highlights, and contact sections automatically.
+For the most current information, always refer to the official updates.
 
-### 3) Firestore rules
-A starter rules file is included in [`firestore.rules`](./firestore.rules).
-For a public landing page, public read access is usually needed for `siteContent/*`.
+## Official Links
 
-### 4) Publish on GitHub Pages
-Deploy from:
+- [Global-updates](https://Global-updates.github.io/USA-Iran-live-updates/)
 
-- **Branch:** `main`
-- **Folder:** `/ (root)`
+## Acknowledgments
 
-Your site URL will be:
-
-```text
-https://officialjmexe-ai.github.io/
-```
+Thanks to all contributors for keeping this repository updated!
